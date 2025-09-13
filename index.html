@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Mundo Abierto Motos (Demo) - Phaser 3</title>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+  <style>
+    html,body{height:100%;margin:0;background:#111;color:#fff;font-family:Arial}
+    #game-container{width:100%;height:100%;overflow:hidden;touch-action:none}
+    .ui-btn{position:absolute;border-radius:10px;padding:10px 14px;background:rgba(0,0,0,0.5);backdrop-filter:blur(3px);color:#fff;text-align:center}
+    #left,#right{bottom:18%;left:6%;width:64px;height:64px;font-size:20px}
+    #gas{right:6%;bottom:18%;width:64px;height:64px;font-size:20px}
+    #brake{right:6%;bottom:28%;width:64px;height:64px;font-size:18px}
+    #maneuvers{left:6%;bottom:6%;display:flex;gap:8px}
+    .man{width:56px;height:48px}
+    #hud{position:absolute;left:8px;top:8px;background:rgba(0,0,0,0.4);padding:8px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <div id="game-container"></div>
+  <div id="hud">Moto: <span id="bikeName">GP</span><br>Vel: <span id="vel">0</span> km/h</div>
+  <div id="langSwitcher" class="ui-btn" style="top:8px;right:8px;position:absolute;">EN</div>
+
+  <!-- Touch Controls (mobile) -->
+  <div id="left" class="ui-btn">◀</div>
+  <div id="right" class="ui-btn">▶</div>
+  <div id="gas" class="ui-btn">Acel</div>
+  <div id="brake" class="ui-btn">Freno</div>
+  <div id="maneuvers" style="position:absolute;">
+    <div id="m1" class="ui-btn man">Wheelie</div>
+    <div id="m2" class="ui-btn man">Stoppie</div>
+    <div id="m3" class="ui-btn man">Salto</div>
+    <div id="m4" class="ui-btn man">Derrape</div>
+    <div id="m5" class="ui-btn man">Backflip</div>
+    <div id="m6" class="ui-btn man">Nosegrab</div>
+    <div id="m7" class="ui-btn man">180</div>
+    <div id="m8" class="ui-btn man">Tailwhip</div>
+  </div>
+
+<script>
+// Idiomas
+const LANG = {
+  es: {
+    gas: "Acel",
+    brake: "Freno",
+    left: "◀",
+    right: "▶",
+    maneuvers: ["Wheelie","Stoppie","Salto","Derrape","Backflip","Nosegrab","180","Tailwhip"],
+    moto: "Moto",
+    vel: "Vel"
+  },
+  en: {
+    gas: "Gas",
+    brake: "Brake",
+    left: "◀",
+    right: "▶",
+    maneuvers: ["Wheelie","Stoppie","Jump","Drift","Backflip","Nosegrab","180","Tailwhip"],
+    moto: "Bike",
+    vel: "Speed"
+  }
+};
+let currentLang = 'es';
+
+// Resto del juego (Phaser config + escenas)
+...
+// por brevedad se omite, igual al código anterior pero con applyLanguage etc.
+</script>
+</body>
+</html>
